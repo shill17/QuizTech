@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">QuizTech</string>
+    <string name="quiz_category_header">Choose Quiz Category</string>
+    <string name="btn_category_hint">Category</string>
+    <string name="title_activity_category">Quiz Category</string>
+    <string name="title_activity_quiz">Quiz</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
