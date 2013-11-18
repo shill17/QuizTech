@@ -6,14 +6,12 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "category")
 public class Category extends BaseModel {
+	public static final String CATEGORY = "category_name";
+
 	// No-arg constructor
 	public Category() {
 	}
 
-	public Category(String categoryName) {
-		this.categoryName = categoryName;
-	}
-
-	@DatabaseField(canBeNull = false, dataType = DataType.STRING, width = 30)
-	public String categoryName;
+	@DatabaseField(columnName = CATEGORY,canBeNull = false, dataType = DataType.STRING, width = 30)
+	public String category;
 }

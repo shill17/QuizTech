@@ -32,13 +32,30 @@
         android:layout_gravity="center_horizontal"
         android:numStars="5"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Play Again"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:drawableLeft="@android:drawable/ic_menu_rotate"
-        android:drawablePadding="10dp"
-        android:layout_marginTop="100dp"
-        android:layout_gravity="center_horizontal"/>
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play Again"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:drawableLeft="@android:drawable/ic_menu_rotate"
+            android:drawablePadding="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_g_plus_share"
+            android:drawablePadding="10dp"
+            android:text="Share On Google+"
+            android:layout_marginTop="30dp"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+    </LinearLayout>
 </LinearLayout>

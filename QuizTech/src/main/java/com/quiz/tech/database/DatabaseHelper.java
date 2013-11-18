@@ -43,16 +43,20 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		} catch (SQLException e) {
 			Log.e(TAG, "Unable to create tables", e);
 		}
+	}
 
-		Category itCategory = new Category("IT");
-		Category bioCategory = new Category("Biology");
+	public void clearDatabase() {
+		ConnectionSource connectionSource = getConnectionSource();
+
 		try {
-			categoryDao = DaoManager.createDao(connectionSource, Category.class);
-
-			categoryDao.create(itCategory);
-			categoryDao.create(bioCategory);
+			TableUtils.clearTable(connectionSource,Category.class);
+			TableUtils.clearTable(connectionSource, Question.class);
+			TableUtils.clearTable(connectionSource, Options.class);
+			TableUtils.clearTable(connectionSource, Answer.class);
+			TableUtils.clearTable(connectionSource, Session.class);
+			TableUtils.clearTable(connectionSource, Scores.class);
 		} catch (SQLException e) {
-			Log.e(TAG, "Error inserting new category", e);
+			Log.e(TAG, "Unable to clear data from table", e);
 		}
 	}
 

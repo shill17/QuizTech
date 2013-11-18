@@ -21,6 +21,6 @@ public class CategoryViewHolder extends LinearLayout {
 	}
 
 	public void bind(Category category) {
-		tvCategory.setText(category.categoryName);
+		tvCategory.setText(category.category);
 	}
 }

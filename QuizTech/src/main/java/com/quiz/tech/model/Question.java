@@ -4,14 +4,16 @@ import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 
 public class Question extends BaseModel{
+	public static final String CATEGORY_ID = "category_id";
+	public static final String QUESTION = "question";
 
 	// No-arg constructor
 	public Question() {
 	}
 
-	@DatabaseField(columnName = "category_id", canBeNull = false, foreign = true)
+	@DatabaseField(columnName = CATEGORY_ID, canBeNull = false, foreign = true)
 	public Category category;
 
-	@DatabaseField(columnName = "question_text", canBeNull = false, dataType = DataType.STRING)
-	public String questionText;
+	@DatabaseField(columnName = QUESTION, canBeNull = false, dataType = DataType.STRING)
+	public String question;
 }

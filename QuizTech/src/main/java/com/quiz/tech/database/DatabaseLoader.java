@@ -1,8 +1,5 @@
 package com.quiz.tech.database;
 
-/**
- * 
- */
 public interface DatabaseLoader {
-	public abstract void loadData();
+	public abstract void loadData(String path);
 }

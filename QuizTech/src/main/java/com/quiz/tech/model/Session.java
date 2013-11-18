@@ -8,14 +8,16 @@ import java.util.UUID;
 
 @DatabaseTable(tableName = "session")
 public class Session extends BaseModel {
+	public static final String QUESTION_ID = "question_id";
+	public static final String CHOSEN_OPTION_ID = "chosen_option_id";
 
 	// No-arg constructor
 	public Session() {
 	}
 
-	@DatabaseField(columnName = "question_id", canBeNull = false, foreign = true)
+	@DatabaseField(columnName = QUESTION_ID, canBeNull = false, foreign = true)
 	public Question question;
 
-	@DatabaseField(columnName = "chosen_option_id", dataType = DataType.UUID)
+	@DatabaseField(columnName = CHOSEN_OPTION_ID, dataType = DataType.UUID)
 	public UUID chosenOptionId;
 }

@@ -43,6 +43,18 @@ public class CategoryAdapter extends BaseAdapter {
 	}
 
 	@Override
+	public void notifyDataSetChanged() {
+		super.notifyDataSetChanged();
+		initAdapter();
+	}
+
+	@Override
+	public void notifyDataSetInvalidated() {
+		super.notifyDataSetInvalidated();
+		initAdapter();
+	}
+
+	@Override
 	public int getCount() {
 		return categories.size();
 	}
