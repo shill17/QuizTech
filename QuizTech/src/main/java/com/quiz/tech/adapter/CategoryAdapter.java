@@ -24,12 +24,9 @@ import java.util.List;
 @EBean
 public class CategoryAdapter extends BaseAdapter {
 	private static final String TAG = "CategoryAdapter";
-
 	List<Category> categories;
-
 	@OrmLiteDao(helper = DatabaseHelper.class, model = Category.class)
 	Dao<Category, Long> categoryDao;
-
 	@RootContext
 	Context context;
 
@@ -66,12 +63,12 @@ public class CategoryAdapter extends BaseAdapter {
 
 	@Override
 	public long getItemId(int position) {
-		return categories.get(position).id;
+		return getItem(position).id;
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		CategoryViewHolder holder = (convertView == null) ? CategoryViewHolder_.build(context) : (CategoryViewHolder) convertView;
+		CategoryViewHolder holder = (convertView == null) ? CategoryViewHolder_.build(context) : (CategoryViewHolder_) convertView;
 
 		holder.bind(getItem(position));
 

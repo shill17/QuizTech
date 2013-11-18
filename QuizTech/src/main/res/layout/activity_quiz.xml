@@ -7,55 +7,13 @@
               tools:context=".QuizActivity"
               tools:ignore="MergeRootFrame">
 
-    <TextView
+    <com.quiz.tech.utils.NonSwipableViewPager
+        android:id="@+id/viewpager_quiz"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Who is/are the founder of Twitter?"
-        android:textStyle="bold"
-        android:textSize="28sp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="17"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:text="Evan Willams, Jack Dorsey \u0026 Biz Stone"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="17"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:text="Stephen Hawking"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="17"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:text="Steve Jobs, Bill Gates \u0026 Larry Page"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="17"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:text="Mark Zuckerberg"/>
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
 
 </LinearLayout>

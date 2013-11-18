@@ -54,7 +54,7 @@ public class CategoryActivity extends Activity {
 
 	@ItemClick(R.id.list_category)
 	void categoryListItemClicked(Category category) {
-		QuizActivity_.intent(CategoryActivity.this).start();
+		QuizActivity_.intent(CategoryActivity.this).categoryId(category.id).start();
 	}
 
 	@OnActivityResult(CHOOSE_FILE_CODE)
