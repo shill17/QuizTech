@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:paddingTop="30dp"
-              android:paddingBottom="30dp">
+              android:paddingBottom="10dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,12 +13,14 @@
         android:textSize="22sp"
         android:text="@string/quiz_category_header"
         android:id="@+id/textView"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginBottom="30dp" />
 
     <ListView
         android:id="@+id/list_category"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"/>
 
 </LinearLayout>

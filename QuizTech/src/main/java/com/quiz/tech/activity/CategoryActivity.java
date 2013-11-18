@@ -1,29 +1,44 @@
 package com.quiz.tech.activity;
 
-import android.database.sqlite.SQLiteDatabase;
+import android.app.Activity;
+import android.app.ListActivity;
+import android.widget.ListView;
 import android.widget.Toast;
 
-import com.quiz.tech.database.DatabaseHelper;
-import com.quiz.tech.extensions.base.BaseActivity;
+import com.quiz.tech.adapter.CategoryAdapter;
+import com.quiz.tech.model.Category;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ItemClick;
+import org.androidannotations.annotations.OptionsItem;
+import org.androidannotations.annotations.OptionsMenu;
+import org.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.activity_category)
-public class CategoryActivity extends BaseActivity {
+@OptionsMenu(R.menu.category)
+public class CategoryActivity extends Activity {
+	private static String TAG = "CategoryActivity";
 
-	public DatabaseHelper dbHelper;
+	@Bean
+	CategoryAdapter adapter;
+
+	@ViewById(R.id.list_category)
+	ListView categoryList;
+
+	@OptionsItem(R.id.action_load_questions)
+	public void loadData() {
+
+	}
 
 	@AfterViews
-	public void connectDB() {
-		dbHelper = DatabaseHelper.getInstance(CategoryActivity.this);
+	public void wireUpViews() {
+		categoryList.setAdapter(adapter);
+	}
 
-		if(dbHelper != null) {
-			SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-			Toast.makeText(CategoryActivity.this, "Created", Toast.LENGTH_SHORT).show();
-		}
-		else
-			Toast.makeText(CategoryActivity.this, "Not Created", Toast.LENGTH_SHORT).show();
+	@ItemClick(R.id.list_category)
+	public void categoryListItemClicked(Category category) {
+		QuizActivity_.intent(CategoryActivity.this).start();
 	}
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/list_item_category"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -7,13 +8,17 @@
               android:paddingLeft="15dp"
               android:paddingRight="15dp">
 
-    <Button
-        android:id="@+id/btn_category"
+    <TextView
+        android:id="@+id/tv_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:textAppearanceLarge"
+        android:background="@drawable/border_list_item_category"
         android:hint="@string/btn_category_hint"
+        android:gravity="center"
         android:layout_marginTop="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:layout_marginBottom="15dp" />
 
 </LinearLayout>

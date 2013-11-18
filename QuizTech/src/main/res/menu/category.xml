@@ -2,8 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".CategoryActivity" >
     
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+    <item android:id="@+id/action_load_questions"
+        android:title="@string/action_load_questions"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_upload"/>
 </menu>

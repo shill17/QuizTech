@@ -18,7 +18,6 @@ repositories {
 
 ext.androidAnnotationsVersion = '3.0-SNAPSHOT';
 ext.ormliteVersion = '4.47';
-ext.daggerVersion = '1.1.0';
 
 configurations {
     apt
@@ -52,8 +51,6 @@ android {
 
 dependencies {
     apt "org.androidannotations:androidannotations:${androidAnnotationsVersion}"
-    apt "com.squareup.dagger:dagger-compiler:${daggerVersion}"
-    compile "com.squareup.dagger:dagger:${daggerVersion}"
     compile "org.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
     compile "com.j256.ormlite:ormlite-core:${ormliteVersion}"
     compile "com.j256.ormlite:ormlite-android:${ormliteVersion}"
@@ -79,6 +76,7 @@ android.applicationVariants.all { variant ->
 
     variant.javaCompile.options.compilerArgs += [
             '-processorpath', configurations.apt.getAsPath(),
+            '-processor', 'org.androidannotations.AndroidAnnotationProcessor',
             '-AandroidManifestFile=' + variant.processResources.manifestFile,
             '-s', aptOutput
     ]
